@@ -1,0 +1,44 @@
+{
+  "name": "TODO",
+  "description": "TODO",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "sapper dev --no-hot",
+    "build": "sapper build",
+    "export": "sapper export",
+    "start": "node --no-warnings __sapper__/build",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test": "run-p --race dev cy:run"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.1",
+    "jexcel": "^3.8.0",
+    "peaks.js": "^0.16.0",
+    "polka": "^1.0.0-next.11",
+    "sirv": "^0.4.0",
+    "xhr2": "^0.2.0"
+  },
+  "devDependencies": {
+    "@smui/paper": "^1.0.0-beta.19",
+    "@smui/select": "^1.0.0-beta.19",
+    "@smui/button": "^1.0.0-beta.19",
+    "@smui/fab": "^1.0.0-beta.19",
+    "@smui/icon-button": "^1.0.0-beta.19",
+    "@smui/textfield": "^1.0.0-beta.19",
+    "@smui/top-app-bar": "^1.0.0-beta.19",
+    "css-loader": "^3.4.2",
+    "mini-css-extract-plugin": "^0.8.2",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sapper": "^0.27.0",
+    "sass-loader": "^8.0.2",
+    "scss-loader": "0.0.1",
+    "style-loader": "^1.1.2",
+    "svelte": "^3.17.1",
+    "svelte-loader": "^2.9.0",
+    "webpack": "^4.41.5"
+  }
+}
