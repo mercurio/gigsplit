@@ -17,8 +17,6 @@
 	 * Check that the files are there
 	 */
 	async function checkForFiles() {
-		// if(!$dateStr) return goto('/')
-
 		const res = await fetch(`hasAudio/${$dateStr}.json`)
 		const ans = await res.json()
 
@@ -62,15 +60,15 @@
 		<p>The date must be set on the Settings page. This determines the name of the .mp3 we'll read (yyyymmdd.mp3).</p>
 	{:else if status === 'pending'}
 		<p>Looking for audio files...</p>
-  {:else if status === 'mp3'}
-		<p>The mp3 file {missingFile} can't be opened. Please make copy it to the data directory.</p>
-  {:else if status === 'dat'}
+    {:else if status === 'mp3'}
+		<p>The mp3 file {missingFile} can't be opened. Please copy it to the data directory.</p>
+    {:else if status === 'dat'}
 		<p>The mp3 file is present but the dat file is missing.&nbsp;&nbsp;&nbsp;
 			<Button on:click={createDat} variant="raised"><Label>Create it</Label></Button>
 		</p>
-  {:else if status === 'datPending'}
+    {:else if status === 'datPending'}
 		<p>Please wait while the dat file is being generated ({percent})...</p>
-  {:else if status === 'ok'}
+    {:else if status === 'ok'}
 		<SoundBar />
 	{:else}
 		<p style="color: red">{status}</p>
