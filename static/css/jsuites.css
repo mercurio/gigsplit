@@ -2943,8 +2943,8 @@
         bottom: 0px;
     }
     .jnotification-container {
-        background-color: #000;
-        background: rgb(92,92,92);
+        backgroun-color: #000;
+        background: rgba(92,92,92);
         background: linear-gradient(0deg, rgba(92,92,92,1) 0%, rgba(77,77,77,1) 100%);
         color: #fff;
         width: 320px;
