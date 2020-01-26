@@ -5,7 +5,7 @@
 	import Button, {Label} from '@smui/button'
 	import {onMount} from 'svelte'
 	import {goto} from '@sapper/app'
-	import {now, nowHMS, splitError, selectedRow, songTableData, songTableDataIncoming, saveStore} from '../stores.js'
+	import {now, nowHMS, splitError, selectedRow, songTableData, songTableDataIncoming, saveStore, waveform} from '../stores.js'
 	import {hms2sec, sec2hms} from '../utility/utils.js'
 
 	let songTableDiv
@@ -22,10 +22,14 @@
 	/* Copy times */
 	function start2now() {
 		$now = getTime($selectedRow, 'start')
+
+  	if($waveform) $waveform.player.seek($now) 
 	}
 
 	function end2now() {
 		$now = getTime($selectedRow, 'end')
+
+  	if($waveform) $waveform.player.seek($now) 
 	}
 
 	function now2start() {

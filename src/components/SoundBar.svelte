@@ -37,6 +37,7 @@
 		Peaks.init(options, peaksReady)
 	})
 
+
 </script>
 
 <div id="waveform-container">
