@@ -8,11 +8,21 @@ export const dataDir = 'static/data'
 export const dataUriDir = 'data'    // when used in a URI
 
 /*
+ * Clean up an artist name for use in a filename
+ */
+function clean(s) {
+    s = s.replace(/ /g, '_')
+    s = s.replace(/&/g, 'and')
+    
+    return s
+}
+
+/*
  * Given a copy of the store, compute a bunch of file names
  */
 export function filenames(store) {
 	const mp3file = `${dataDir}/${store.dateStr}.mp3`
-	const mp3dir = `${dataDir}/${store.artist.toLowerCase()}-${store.dateStr}`
+	const mp3dir = `${dataDir}/${store.dateStr}-${clean(store.artist)}`
 	const wavsdir = `${dataDir}/${store.dateStr}.wavs`
 	const mtdir = `${dataDir}/multitrack`
 
